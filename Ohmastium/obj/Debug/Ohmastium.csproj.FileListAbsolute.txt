@@ -17,3 +17,4 @@ C:\Users\oriont\dev\Ohmastium\Ohmastium\obj\Debug\Ohmastium.csproj.CoreCompileIn
 C:\Users\oriont\dev\Ohmastium\Ohmastium\obj\Debug\Ohmastium.csproj.CopyComplete
 C:\Users\oriont\dev\Ohmastium\Ohmastium\obj\Debug\Ohmastium.exe
 C:\Users\oriont\dev\Ohmastium\Ohmastium\obj\Debug\Ohmastium.pdb
+C:\Users\oriont\dev\Ohmastium\Ohmastium\bin\DesktopGL\AnyCPU\Debug\Content\ohmastium.xnb
