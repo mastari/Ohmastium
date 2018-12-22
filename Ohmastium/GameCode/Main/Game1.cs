@@ -7,6 +7,7 @@ namespace Ohmastium {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D ohTexture;
+        Texture2D fuTexture;
         Stage stage;
         
         public Game1() {
@@ -23,6 +24,7 @@ namespace Ohmastium {
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ohTexture = Content.Load<Texture2D>("ohmastium");
+            fuTexture = Content.Load<Texture2D>("fuelium");
         }
 
         protected override void UnloadContent() {
@@ -47,6 +49,7 @@ namespace Ohmastium {
 
             spriteBatch.Begin();
             spriteBatch.Draw(ohTexture, new Vector2(0, 0), Color.White);
+            spriteBatch.Draw(fuTexture, new Vector2(400, 0), Color.White);
             spriteBatch.End();
         }
     }

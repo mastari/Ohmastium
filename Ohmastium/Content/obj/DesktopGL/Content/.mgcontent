@@ -4,9 +4,11 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/oriont/dev/Ohmastium/Ohmastium/Content/ohmastium.png</File>
+    <File>C:/Users/Ari/Desktop/Ohmastium/Ohmastium/Content/fuelium.png</File>
+    <File>C:/Users/Ari/Desktop/Ohmastium/Ohmastium/Content/ohmastium.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
