@@ -4,7 +4,6 @@ import Game.GameStateManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 
 public class GameLoop extends JPanel implements Runnable {
@@ -61,7 +60,6 @@ public class GameLoop extends JPanel implements Runnable {
 
             while(deltaTime >= 1) {
                 ticks++;
-                //TICK + DELTATIME
                 tick(deltaTime);
 
                 deltaTime -= 1;
@@ -70,7 +68,6 @@ public class GameLoop extends JPanel implements Runnable {
 
             if(shouldRender) {
                 frames++;
-                //RENDER
                 render();
             }
 
@@ -102,7 +99,6 @@ public class GameLoop extends JPanel implements Runnable {
     public void render() {
         graphics2D.clearRect(0, 0, width, height);
         graphics2D.setRenderingHints(new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON));
-        graphics2D.fill(new Ellipse2D.Float(0, 0, getWidth(), getHeight()));
         gsm.render(graphics2D);
         clear();
     }
