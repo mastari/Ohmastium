@@ -1,5 +1,7 @@
 package World;
 
+import Game.WorldState;
+
 import java.awt.*;
 
 public class Block {
@@ -17,7 +19,8 @@ public class Block {
     }
 
     public void render(Graphics2D g) {
-        g.drawRect((int) pos.x * 50, (int) pos.y * 50, 50, 50);
+        g.setColor(Color.WHITE);
+        g.drawRect((int) (WorldState.cam.pos.x + (pos.x * 50)), (int) (WorldState.cam.pos.y + (pos.y * 50)), 50, 50);
     }
 
 }
