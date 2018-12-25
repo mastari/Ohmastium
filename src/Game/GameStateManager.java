@@ -1,5 +1,7 @@
 package Game;
 
+import World.WorldState;
+
 import java.awt.*;
 import java.util.Stack;
 
