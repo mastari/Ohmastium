@@ -6,6 +6,8 @@ import java.awt.*;
 
 public class Block {
 
+    public final static int blockSize = 50;
+
     public Vector pos;
     public BlockType type;
 
@@ -20,7 +22,7 @@ public class Block {
 
     public void render(Graphics2D g) {
         g.setColor(Color.WHITE);
-        g.drawRect((int) (WorldState.cam.pos.x + (pos.x * 50)), (int) (WorldState.cam.pos.y + (pos.y * 50)), 50, 50);
+        g.drawRect((int) (WorldState.cam.pos.x + (pos.x * blockSize)), (int) (WorldState.cam.pos.y + (pos.y * blockSize)), blockSize, blockSize);
     }
 
 }
