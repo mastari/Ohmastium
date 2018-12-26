@@ -1,32 +1,47 @@
 package Player;
 
 import Camera.Camera;
+import Game.GameStateManager;
+import Input.KeyboardManager;
 import World.Vector;
 import World.World;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class Player {
 
     public Vector pos;
     public World world;
     public Camera cam;
+    public GameStateManager gsm;
 
     public Vector size;
 
-    public Player(Vector pos, World world, Camera cam) {
-        this.pos = pos;
+    public Player(GameStateManager gsm, World world, Camera cam) {
+        this.gsm = gsm;
         this.world = world;
         this.cam = cam;
     }
 
     public void init() {
+        pos = new Vector(0, 0);
         size = new Vector(50, 50);
     }
 
     public void tick(double deltaTime) {
-        pos.x+=.1;
-        pos.y+=.1;
+        if (KeyboardManager.isKeyDown(KeyEvent.VK_W)) {
+            this.pos.y --;
+        }
+        if (KeyboardManager.isKeyDown(KeyEvent.VK_S)) {
+            this.pos.y ++;
+        }
+        if (KeyboardManager.isKeyDown(KeyEvent.VK_A)) {
+            this.pos.x --;
+        }
+        if (KeyboardManager.isKeyDown(KeyEvent.VK_D)) {
+            this.pos.x ++;
+        }
     }
 
     public void render(Graphics2D g) {

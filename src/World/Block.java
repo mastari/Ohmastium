@@ -1,7 +1,5 @@
 package World;
 
-import Game.WorldState;
-
 import java.awt.*;
 
 public class Block {

@@ -1,8 +1,9 @@
-package Game;
+package World;
 
 import Camera.Camera;
+import Game.GameState;
+import Game.GameStateManager;
 import Player.Player;
-import World.*;
 
 import java.awt.*;
 
@@ -24,14 +25,14 @@ public class WorldState extends GameState {
         world = new World(20, 20);
         world.init();
 
-        player = new Player(new Vector(0, 0), world, cam);
+        player = new Player(gsm, world, cam);
         player.init();
     }
 
     @Override
     public void tick(double deltaTime) {
         cam.tick(deltaTime);
-        cam.follow(player);
+        cam.followPlayer(player);
         world.tick(deltaTime);
         player.tick(deltaTime);
     }
@@ -41,6 +42,7 @@ public class WorldState extends GameState {
         cam.render(g);
         world.render(g);
         player.render(g);
+
     }
 
 }

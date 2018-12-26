@@ -1,9 +1,12 @@
 package Engine;
 
 import Game.GameStateManager;
+import Input.KeyboardManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 
 public class GameLoop extends JPanel implements Runnable {
@@ -13,6 +16,8 @@ public class GameLoop extends JPanel implements Runnable {
     private Thread thread;
     private boolean running;
 
+    public JFrame window;
+
     private int fps, tps;
     private int width, height;
 
@@ -21,9 +26,10 @@ public class GameLoop extends JPanel implements Runnable {
     public Graphics2D graphics2D;
     public BufferedImage img;
 
-    public GameLoop(int width, int height) {
+    public GameLoop(int width, int height, JFrame window) {
         this.width = width;
         this.height = height;
+        this.window = window;
 
         setPreferredSize(new Dimension(width, height));
         setFocusable(false);
@@ -80,6 +86,15 @@ public class GameLoop extends JPanel implements Runnable {
                 frames = 0;
                 ticks = 0;
             }
+
+            if(gsm.pendingState != null) {
+                gsm.pushState(gsm.pendingState);
+            }
+            if(KeyboardManager.isKeyDown(KeyEvent.VK_ESCAPE)) {
+                System.out.println("Closing Window.");
+                window.dispatchEvent(new WindowEvent(window, WindowEvent.WINDOW_CLOSING));
+            }
+
         }
     }
 
