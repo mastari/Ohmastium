@@ -11,10 +11,13 @@ public class GameStateManager {
 
     public GameState pendingState;
 
-    public GameStateManager() {
+    public Graphics2D graphics2D;
+
+    public GameStateManager(Graphics2D g) {
         gameStates = new Stack<>();
         gameStates.push(new WorldState(this));
         pendingState = null;
+        this.graphics2D = g;
     }
 
     public void init() {

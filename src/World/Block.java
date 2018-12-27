@@ -1,5 +1,7 @@
 package World;
 
+import Camera.DrawInterface;
+
 import java.awt.*;
 
 public class Block {
@@ -18,13 +20,10 @@ public class Block {
 
     }
 
-    public void render(Graphics2D g) {
+    public void render(DrawInterface g) {
         g.setColor(Color.WHITE);
-        g.drawRect((int) (WorldState.cam.pos.x + (pos.x * blockSize)), (int) (WorldState.cam.pos.y + (pos.y * blockSize)), blockSize, blockSize);
+        g.drawSquare(new Vector(pos.x, pos.y), blockSize);
     }
 
 }
 
-enum BlockType {
-    AIR
-}

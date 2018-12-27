@@ -9,9 +9,11 @@ import java.awt.*;
 public class Camera {
 
     public Vector pos;
+    public Graphics2D graphics2D;
 
-    public Camera(Vector pos) {
+    public Camera(Vector pos, Graphics2D g) {
         this.pos = pos;
+        this.graphics2D = g;
     }
 
     public void init() {

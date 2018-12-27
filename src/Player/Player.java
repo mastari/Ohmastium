@@ -1,6 +1,6 @@
 package Player;
 
-import Camera.Camera;
+import Camera.*;
 import Game.GameStateManager;
 import Input.KeyboardManager;
 import World.Vector;

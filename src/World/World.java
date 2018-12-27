@@ -1,5 +1,7 @@
 package World;
 
+import Camera.DrawInterface;
+
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +33,7 @@ public class World {
         }
     }
 
-    public void render(Graphics2D g) {
+    public void render(DrawInterface g) {
         for (Block b : blockMap.values()) {
             b.render(g);
         }

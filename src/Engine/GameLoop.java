@@ -103,7 +103,7 @@ public class GameLoop extends JPanel implements Runnable {
         graphics2D = (Graphics2D) img.getGraphics();
         running = true;
 
-        gsm = new GameStateManager();
+        gsm = new GameStateManager(graphics2D);
         gsm.init();
     }
 
